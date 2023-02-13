@@ -27,13 +27,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Column() {
-                        Row {
+                    Column(modifier = Modifier.fillMaxHeight()) {
+                        Row(modifier = Modifier.fillMaxWidth().fillMaxHeight(0.5f)) {
                             Quadrant1()
                             Quadrant2()
-
                         }
-                        Row {
+                        Row(modifier = Modifier.fillMaxWidth()) {
                             Quadrant3()
                             Quadrant4()
 
@@ -51,7 +50,8 @@ fun Quadrant1(){
     var content = stringResource(id = R.string.contentQuadrant1)
 
     Surface(color = androidx.compose.ui.graphics.Color.Green) {
-        Column(modifier = Modifier.padding(16.dp).fillMaxWidth(0.5f).fillMaxHeight()) {
+        Column(modifier = Modifier.padding(16.dp).fillMaxWidth(0.5f).fillMaxHeight(),
+                verticalArrangement = Arrangement.Center) {
             Text(text = title,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp).fillMaxWidth(),
@@ -68,10 +68,12 @@ fun Quadrant2(){
     var content = stringResource(id = R.string.contentQuadrant2)
 
     Surface(color = androidx.compose.ui.graphics.Color.Yellow) {
-        Column(modifier = Modifier.padding(16.dp).fillMaxSize()) {
+        Column(modifier = Modifier.padding(16.dp).fillMaxWidth().fillMaxHeight(),
+            verticalArrangement = Arrangement.Center) {
             Text(text = title,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(bottom = 16.dp)
+                modifier = Modifier.padding(bottom = 16.dp).fillMaxWidth(),
+                textAlign = TextAlign.Center
             )
             Text(text = content)
         }
@@ -84,10 +86,12 @@ fun Quadrant3(){
     var content = stringResource(id = R.string.contentQuadrant3)
 
     Surface(color = androidx.compose.ui.graphics.Color.Cyan) {
-        Column(modifier = Modifier.padding(16.dp).fillMaxWidth(0.5f).fillMaxHeight()) {
+        Column(modifier = Modifier.padding(16.dp).fillMaxWidth(0.5f).fillMaxHeight(),
+            verticalArrangement = Arrangement.Center) {
             Text(text = title,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(bottom = 16.dp)
+                modifier = Modifier.padding(bottom = 16.dp).fillMaxWidth(),
+                textAlign = TextAlign.Center
             )
             Text(text = content)
         }
@@ -100,10 +104,12 @@ fun Quadrant4(){
     var content = stringResource(id = R.string.contentQuadrant4)
 
     Surface(color = androidx.compose.ui.graphics.Color.LightGray) {
-        Column(modifier = Modifier.padding(16.dp).fillMaxSize()) {
+        Column(modifier = Modifier.padding(16.dp).fillMaxWidth().fillMaxHeight(),
+            verticalArrangement = Arrangement.Center) {
             Text(text = title,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(bottom = 16.dp)
+                modifier = Modifier.padding(bottom = 16.dp).fillMaxWidth(),
+                textAlign = TextAlign.Center
             )
             Text(text = content)
         }
