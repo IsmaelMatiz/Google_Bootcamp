@@ -33,11 +33,10 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     Column() {
-                        Row(modifier = Modifier.weight(0.4f)) {
+                        Row(modifier = Modifier.weight(1f)) {
                             Box() {
-
                                 TopImage(picture = painterResource(id = R.drawable.top_profile_pic))
-                                Row (
+                                Row(
                                     verticalAlignment = Alignment.Bottom,
                                     horizontalArrangement = Arrangement.Center,
                                     modifier = Modifier.fillMaxSize()
@@ -47,7 +46,7 @@ class MainActivity : ComponentActivity() {
                                 }
                             }
                         }
-                        Row(modifier = Modifier.weight(0.6f)) {
+                        Row(modifier = Modifier.weight(1f)) {
 
                         }
                     }
@@ -62,7 +61,7 @@ class MainActivity : ComponentActivity() {
 fun TopImage(picture: Painter){
     Image(painter = picture,
           contentDescription = "Top profile picture",
-          modifier = Modifier.fillMaxWidth(),
+          modifier = Modifier.fillMaxWidth().fillMaxHeight(0.8f),
           contentScale = ContentScale.Crop
         )
 }
@@ -95,11 +94,10 @@ fun ButtonSeeMore() {
 fun DefaultPreview() {
     PresentationCardTheme {
         Column() {
-            Row(modifier = Modifier.weight(0.4f)) {
+            Row(modifier = Modifier.weight(1f)) {
                 Box() {
-
-                    TopImage(picture = painterResource(id = R.drawable.top_profile_pic))
-                    Row (
+                        TopImage(picture = painterResource(id = R.drawable.top_profile_pic))
+                    Row(
                         verticalAlignment = Alignment.Bottom,
                         horizontalArrangement = Arrangement.Center,
                         modifier = Modifier.fillMaxSize()
@@ -109,7 +107,7 @@ fun DefaultPreview() {
                     }
                 }
             }
-            Row(modifier = Modifier.weight(0.6f)) {
+            Row(modifier = Modifier.weight(1f)) {
 
             }
         }
